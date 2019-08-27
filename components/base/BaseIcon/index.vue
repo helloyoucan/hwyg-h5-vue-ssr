@@ -1,26 +1,27 @@
 <template>
   <svg :class="svgClass" aria-hidden="true">
-    <use :xlink:href="iconName"></use>
+    <use :xlink:href="iconName" />
   </svg>
 </template>
 
 <script>
 export default {
-  name: 'v-icon',
+  name: 'VIcon',
   props: {
     icon: {
       type: String,
       required: true
     },
     className: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   computed: {
-    iconName() {
-      return `#icon-${this.icon.replace('icon-', '')}`
+    iconName () {
+      return `#${this.icon.replace('icon-', '')}`
     },
-    svgClass() {
+    svgClass () {
       if (this.className) {
         return `v-icon ${this.className}`
       }
@@ -38,5 +39,5 @@ export default {
     fill: currentColor;
     overflow: hidden;
   }
-  
+
 </style>

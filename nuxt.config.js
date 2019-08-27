@@ -14,7 +14,7 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script:[
+    script: [
       { type: 'application/javascript', src: '//at.alicdn.com/t/font_1169519_r7wsxhhik7a.js' }
     ]
   },
@@ -32,7 +32,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/mint-ui.js'
+    '@/plugins/mint-ui.js',
+    '@/plugins/initVue.js'
   ],
   /*
   ** Nuxt.js dev-modules
