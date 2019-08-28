@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .v-icon {
     width: 1em;
     height: 1em;
