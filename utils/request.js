@@ -3,7 +3,9 @@ import axios from 'axios'
 // 创建axios实例
 const service = axios.create({
   timeout: 15000, // 请求超时时间15s
-  baseURL: process.env.NODE_ENV === 'production' ? '/graphql' : '',
+  // eslint-disable-next-line no-constant-condition
+  // baseURL: true || process.env.NODE_ENV === 'production' ? '/graphql' : '',
+  baseURL: process.client ? '/graphql' : 'http://helloyoucan.com:9090',
   headers: {
     'Cache-Control': 'no-cache',
     'If-Modified-Since': '0',
@@ -12,11 +14,9 @@ const service = axios.create({
 })
 
 // request拦截器
-service.interceptors.request.use(config =>
-  // if (store.getters.token) {
-  //   config.headers['X-Token'] = getCookies() // 让每个请求携带自定义token 请根据实际情况自行修改
-  // }
-  config, (error) => {
+service.interceptors.request.use((config) => {
+  return config
+}, (error) => {
   // eslint-disable-next-line no-console
   console.log(error) // for debug
   Promise.reject(error)
@@ -34,7 +34,7 @@ service.interceptors.response.use(
   (error) => {
     // eslint-disable-next-line no-console
     console.log(`err:${error}`) // for debug
-    return Promise.reject(error.response.data)
+    return error.response ? Promise.reject(error.response.data) : Promise.reject(error.response)
   }
 )
 

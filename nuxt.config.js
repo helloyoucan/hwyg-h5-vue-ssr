@@ -48,6 +48,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     '@nuxtjs/style-resources'
   ],
   styleResources: {
@@ -58,6 +59,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
   },
   /*
   ** Build configuration
@@ -68,6 +70,22 @@ module.exports = {
     */
     extend (config, ctx) {
 
+    },
+    babel: {
+      'plugins': [['component',
+        {
+          'libraryName': 'mint-ui',
+          'style': true
+        }
+      ]]
+    }
+  },
+  proxy: {
+    '/graphql': {
+      target: 'http://helloyoucan.com:9090',
+      pathRewrite: {
+        '^/graphql': '/'
+      }
     }
   }
 }

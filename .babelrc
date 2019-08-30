@@ -10,11 +10,7 @@
             }
           }
         ]
-      ],
-      "plugins":[["components",[{
-        "libraryName":"mint-ui",
-        "style":true
-      }]]]
+      ]
     }
   }
 }
