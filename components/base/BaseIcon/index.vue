@@ -23,16 +23,16 @@ export default {
     },
     svgClass () {
       if (this.className) {
-        return `v-icon ${this.className}`
+        return `_v-icon v-icon ${this.className}`
       }
-      return 'v-icon'
+      return '_v-icon v-icon'
     }
   }
 }
 </script>
 
 <style>
-  .v-icon {
+  ._v-icon {
     width: 1em;
     height: 1em;
     vertical-align: -0.15em;

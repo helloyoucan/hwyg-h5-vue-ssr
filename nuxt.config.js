@@ -1,4 +1,4 @@
-
+const proxyUtils = require('./config/proxy.common.js')
 module.exports = {
   mode: 'universal',
   /*
@@ -80,12 +80,5 @@ module.exports = {
       ]]
     }
   },
-  proxy: {
-    '/graphql': {
-      target: 'http://helloyoucan.com:9090',
-      pathRewrite: {
-        '^/graphql': '/'
-      }
-    }
-  }
+  proxy: proxyUtils
 }

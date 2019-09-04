@@ -5,7 +5,7 @@ const service = axios.create({
   timeout: 15000, // 请求超时时间15s
   // eslint-disable-next-line no-constant-condition
   // baseURL: true || process.env.NODE_ENV === 'production' ? '/graphql' : '',
-  baseURL: process.client ? '/graphql' : 'http://helloyoucan.com:9090',
+  // baseURL: process.client ? '/graphql' : 'http://helloyoucan.com:9090',
   headers: {
     'Cache-Control': 'no-cache',
     'If-Modified-Since': '0',
