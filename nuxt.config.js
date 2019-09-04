@@ -26,13 +26,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'normalize.css'
+    'normalize.css',
+    '@/assets/styles/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/mint-ui.js',
+    { src: '@/plugins/mint-ui.js', ssr: true },
     '@/plugins/initVue.js'
   ],
   /*

@@ -1,8 +1,8 @@
 import request from '@/utils/request.js'
-
+import { baseUrl } from '@/config/proxy.js'
 export function getSealList ({ page, size }) {
   return request({
-    url: '/auction/seal/list',
+    url: `${baseUrl.graphql}/auction/seal/list`,
     method: 'POST',
     data: `
             {
@@ -37,7 +37,7 @@ export function getSealList ({ page, size }) {
 
 export function getSceneList ({ page, size, rang }) {
   return request({
-    url: '/auction/scene/list',
+    url: `${baseUrl.graphql}/auction/scene/list`,
     method: 'POST',
     data: `
             {

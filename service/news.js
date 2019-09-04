@@ -1,7 +1,8 @@
 import request from '@/utils/request.js'
+import { baseUrl } from '@/config/proxy.js'
 export function getNewsList ({ size = 10, page = 1, keyWord = '' }) {
   return request({
-    url: '/news/list',
+    url: `${baseUrl.graphql}/news/list`,
     method: 'POST',
     data: `
             {

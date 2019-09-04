@@ -16,6 +16,7 @@ export default {
 </script>
 <style>
 ._img{
+  display: block;
     width: 100%;
     height: 100%;
     max-width: inherit;

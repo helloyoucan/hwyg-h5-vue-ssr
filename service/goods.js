@@ -1,8 +1,12 @@
 import request from '@/utils/request.js'
-
+import { baseUrl } from '@/config/proxy.js'
+/**
+ *
+ * @param {*} type 商品类型，1求购，2供应
+ */
 export function getGoodsList ({ size = 10, page = 1, type = 1 }) {
   return request({
-    url: '/goods/list',
+    url: `${baseUrl.graphql}/goods/list`,
     method: 'POST',
     data: `
             {

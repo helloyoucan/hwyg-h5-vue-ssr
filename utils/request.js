@@ -15,10 +15,12 @@ const service = axios.create({
 
 // request拦截器
 service.interceptors.request.use((config) => {
+  // eslint-disable-next-line no-console
+  console.log(config.url)
   return config
 }, (error) => {
   // eslint-disable-next-line no-console
-  console.log(error) // for debug
+  process.env.NODE_ENV !== 'development' && console.log(error) // for debug
   Promise.reject(error)
 })
 

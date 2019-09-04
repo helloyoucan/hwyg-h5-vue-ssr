@@ -1,7 +1,8 @@
 import request from '@/utils/request.js'
-export function getBrannerList () {
+import { baseUrl } from '@/config/proxy.js'
+export function getTradeNewsList () {
   return request({
-    url: '/order/traded',
+    url: `${baseUrl.graphql}/order/traded`,
     method: 'POST',
     data: `
             {
